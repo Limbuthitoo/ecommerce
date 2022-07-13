@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class,'home']);
 
 
-Route::get('/admin', function () {
+Route::get('/dashboard', function () {
     return view('admin.app');
 })->middleware(['auth','admin'])->name('admin');
 
 Route::get('/user',function(){
-    return view('frontend.app');
+    return view('frontend.pages.home');
 })->middleware(['auth','customer'])->name('user');
 
 require __DIR__.'/auth.php';
