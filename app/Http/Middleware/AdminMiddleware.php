@@ -26,7 +26,7 @@ class AdminMiddleware
 
             // if user is not customer take him to his dashboard
             if ( $user-> hasRole('customer')) {
-                return redirect(route('customer'));
+                return redirect(route('user'));
             }
             // if user is admin take him to his dashboard
             else if ( $user->hasRole('admin')) {

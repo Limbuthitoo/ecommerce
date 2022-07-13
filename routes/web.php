@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,16 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PageController::class,'home']);
+
 
 Route::get('/admin', function () {
     return view('admin.app');
 })->middleware(['auth','admin'])->name('admin');
 
-Route::get('/customer',function(){
+Route::get('/user',function(){
     return view('frontend.app');
-})->middleware(['auth','customer'])->name('customer');
+})->middleware(['auth','customer'])->name('user');
 
 require __DIR__.'/auth.php';

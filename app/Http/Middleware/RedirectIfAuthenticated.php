@@ -34,7 +34,7 @@ class RedirectIfAuthenticated
                 }
                 /**Redirect to admin **/
                 else if($user->hasRole('customer')){
-                    return redirect(route('customer'));
+                    return redirect(route('user'));
                 }
             }
         }
