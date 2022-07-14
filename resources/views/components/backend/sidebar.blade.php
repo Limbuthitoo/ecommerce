@@ -18,9 +18,7 @@
                             class="hide-menu">Products</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
-                            class="hide-menu">Orders</span></a></li><li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
-                            class="hide-menu">Orders</span></a></li>
+                            class="hide-menu">Orders</span></a></li><li class="sidebar-item">
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
                             class="hide-menu">Post</span></a></li>
