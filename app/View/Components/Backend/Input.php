@@ -10,6 +10,7 @@ class Input extends Component
     protected $type;
     protected $placeholder;
 
+
     /**
      * Create a new component instance.
      *
@@ -20,6 +21,7 @@ class Input extends Component
         $this->name =$name;
         $this->type =$type;
         $this->placeholder =$placeholder;
+
     }
 
     /**
@@ -32,6 +34,7 @@ class Input extends Component
         $type = $this->type;
         $name = $this->name;
         $placeholder = $this->placeholder;
+
 
         return view('components.backend.input',compact('type','name','placeholder'));
     }

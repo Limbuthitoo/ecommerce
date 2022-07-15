@@ -2,19 +2,20 @@
 
 namespace App\View\Components\Backend;
 
-use App\Models\Company;
 use Illuminate\View\Component;
 
-class dashboard extends Component
+class label extends Component
 {
+    protected $for;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($for)
     {
-        //
+        $this->for = $for;
     }
 
     /**
@@ -24,7 +25,7 @@ class dashboard extends Component
      */
     public function render()
     {
-        $company= Company::first();
-        return view('components.backend.dashboard',compact('company'));
+        $for = $this->for;
+        return view('components.backend.label',compact('for'));
     }
 }

@@ -16,6 +16,24 @@
                         <th>Logo</th>
                         <th>Action</th>
                     </tr>
+                    <tr>
+                        @if (!empty($company))
+                        <td>{{$company->name}}</td>
+                        <td>{{$company->email}}</td>
+                        <td>{{$company->contact}}</td>
+                        <td>{{$company->address}}</td>
+                        <td><img src="{{asset($company->logo)}}"  alt=""></td>
+                        <td>
+                            <form action="/company/{{$company->id}}" method="post">
+                                @csrf
+                                @method('delete')
+                            <a href="/company/edit" class="btn btn-success">edit</a>
+                            <button type="submit" class="btn btn-danger">delete</button>
+                            </form>
+                        </td>
+
+                        @endif
+                    </tr>
                 </thead>
             </table>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -14,7 +15,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return view('admin.company.index');
+        $company = Company::first();
+        return view('admin.company.index',compact('company'));
     }
 
     /**
@@ -35,7 +37,25 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $company = new Company();
+        $company->name = $request->name;
+        $company->address = $request->address;
+        $company->contact = $request->contact;
+        $company->email = $request->email;
+        $company->facebook = $request->facebook;
+        $company->youtube = $request->youtube;
+        $company->linkedin = $request->linkedin;
+        $company->twitter = $request->twitter;
+        $company->instagram = $request->instagram;
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $newName = time() . "." . $file->getClientOriginalExtension();
+            $file -> move("images",$newName);
+            $company->logo="images/$newName";
+        }
+        $company->save();
+        return redirect("/company");
     }
 
     /**
@@ -57,7 +77,8 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $company = Company::find($id);
+        return view('admin.company.edit',compact('company'));
     }
 
     /**
@@ -69,7 +90,25 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $company = Company::find($id);
+        $company->name = $request->name;
+        $company->address = $request->address;
+        $company->contact = $request->contact;
+        $company->email = $request->email;
+        $company->facebook = $request->facebook;
+        $company->youtube = $request->youtube;
+        $company->linkedin = $request->linkedin;
+        $company->twitter = $request->twitter;
+        $company->instagram = $request->instagram;
+
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
+            $newName = time() . "." . $file->getClientOriginalExtension();
+            $file -> move("images",$newName);
+            $company->logo="images/$newName";
+        }
+        $company->update();
+        return redirect("/company");
     }
 
     /**
@@ -80,6 +119,8 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company = Company::find($id);
+        $company->delete();
+        return redirect('/company');
     }
 }

@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
     return view('admin.app');
 })->middleware(['auth','admin'])->name('admin');
 
-Route::get('/',function(){
+Route::get('/user',function(){
     return view('frontend.pages.home');
 })->middleware(['auth','customer'])->name('user');
 

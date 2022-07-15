@@ -56,14 +56,15 @@
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                            <img src="{{$company->logo}}" alt="homepage" class="light-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span class="logo-text">
+                        <span class="logo-text py-2">
                             <!-- dark Logo text -->
-                            <img src="/assets/images/logo-text.png" alt="homepage" class="light-logo" />
+                            {{-- <img src="/assets/images/logo-text.png" alt="homepage" class="light-logo" /> --}}
+                            <h4>Admin</h4>
 
                         </span>
                         <!-- Logo icon -->
@@ -224,11 +225,12 @@
                                 <a class="dropdown-item" href="javascript:void(0)"><i
                                         class="ti-settings me-1 ms-1"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i
-                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="ps-4 p-10"><a href="javascript:void(0)"
-                                        class="btn btn-sm btn-success btn-rounded text-white">View Profile</a></div>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <button class="dropdown-item" type="submit" href="route('logout')"
+                                    ><i class="fa fa-power-off me-1 ms-1"></i> Logout</button>
+                                </form>
                             </ul>
                         </li>
                         <!-- ============================================================== -->

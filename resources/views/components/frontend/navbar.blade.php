@@ -2,14 +2,14 @@
     <div class="container">
       <a class="navbar-brand" href="#">EZ-Mart</a>
 
-      <form class="container d-flex justify-content-center align-items-center" role="search">
+      <form class="container d-flex justify-content-center align-items-center " role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
 
 
         @guest
-            <a class="nav-item btn btn-success d-md-flex justify-content-md-end" href="/login">Login</a>
+            <a class="nav-item btn btn-success d-md-flex justify-content-md-end order-md-second" href="/login">Login</a>
         @else
             <ul class="navbar-nav me-end mb-2 ms-auto mb-md-0">
                 <li class="nav-item dropdown">
@@ -24,7 +24,6 @@
                             <!-- Authentication -->
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
