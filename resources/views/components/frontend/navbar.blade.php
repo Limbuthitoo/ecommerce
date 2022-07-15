@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md d-flex bg-light">
+<nav class="navbar navbar-expand-md d-flex bg-light py-3">
     <div class="container">
       <a class="navbar-brand" href="#">EZ-Mart</a>
 
