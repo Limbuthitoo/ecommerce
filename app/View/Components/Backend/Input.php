@@ -9,6 +9,7 @@ class Input extends Component
     protected $name;
     protected $type;
     protected $placeholder;
+    protected $value;
 
 
     /**
@@ -16,11 +17,12 @@ class Input extends Component
      *
      * @return void
      */
-    public function __construct($type,$name,$placeholder)
+    public function __construct($type,$name,$placeholder,$value)
     {
         $this->name =$name;
         $this->type =$type;
         $this->placeholder =$placeholder;
+        $this->value =$value;
 
     }
 
@@ -34,8 +36,9 @@ class Input extends Component
         $type = $this->type;
         $name = $this->name;
         $placeholder = $this->placeholder;
+        $value = $this->value;
 
 
-        return view('components.backend.input',compact('type','name','placeholder'));
+        return view('components.backend.input',compact('type','name','placeholder','value'));
     }
 }

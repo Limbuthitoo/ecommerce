@@ -3,7 +3,10 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h3>Company Information</h3>
-            <a href="/company/create" class="btn btn-success py-2">Add Company</a>
+            @if (empty($company))
+                <a href="/company/create" class="btn btn-success py-2">Add Company</a>
+            @endif
+
         </div>
         <div class="card-body">
             <table class="table-stripped table">
@@ -27,7 +30,7 @@
                             <form action="/company/{{$company->id}}" method="post">
                                 @csrf
                                 @method('delete')
-                            <a href="/company/edit" class="btn btn-success">edit</a>
+                            <a href="/company/{{$company->id}}/edit" class="btn btn-success">edit</a>
                             <button type="submit" class="btn btn-danger">delete</button>
                             </form>
                         </td>

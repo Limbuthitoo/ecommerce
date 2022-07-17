@@ -10,23 +10,23 @@
                 @csrf
                 <div class="form-group">
                     <x-backend.label for="name"><span class="fw-bold">Company Name:</span></x-backend.label>
-                    <x-backend.input name="name" type="text" placeholder="Enter Company Name"/>
+                    <x-backend.input name="name" type="text" placeholder="Enter Company Name" value=""/>
                 </div>
                 <div class="form-group">
                     <x-backend.label for="email"><span class="fw-bold">Company Email:</span></x-backend.label>
-                    <x-backend.input name="email" type="email" placeholder="Enter Company Email"/>
+                    <x-backend.input name="email" type="email" placeholder="Enter Company Email" value=""/>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <x-backend.label for="address"><span class="fw-bold">Company Address:</span></x-backend.label>
-                            <x-backend.input name="address" type="text" placeholder="Enter Company Address"/>
+                            <x-backend.input name="address" type="text" placeholder="Enter Company Address" value=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <x-backend.label for="contact"><span class="fw-bold">Company Contact No:</span></x-backend.label>
-                            <x-backend.input name="contact" type="tel" placeholder="888 888 8888"/>
+                            <x-backend.input name="contact" type="tel" placeholder="888 888 8888" value=""/>
                         </div>
                     </div>
                 </div>
@@ -34,13 +34,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <x-backend.label for="instagram"><span class="fw-bold">Company Intagram:</span></x-backend.label>
-                            <x-backend.input name="instagram" type="text" placeholder="Enter Company Instagram"/>
+                            <x-backend.input name="instagram" type="text" placeholder="Enter Company Instagram" value=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <x-backend.label for="youtube"><span class="fw-bold">Company Youtube:</span></x-backend.label>
-                            <x-backend.input name="youtube" type="text" placeholder="Enter Company Youtube"/>
+                            <x-backend.input name="youtube" type="text" placeholder="Enter Company Youtube" value=""/>
                         </div>
                     </div>
                 </div>
@@ -48,19 +48,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <x-backend.label for="twitter"><span class="fw-bold">Company Twitter:</span></x-backend.label>
-                            <x-backend.input name="twitter" type="text" placeholder="Enter Company twitter"/>
+                            <x-backend.input name="twitter" type="text" placeholder="Enter Company twitter" value=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <x-backend.label for="linkedin"><span class="fw-bold">Company Linkedin:</span></x-backend.label>
-                            <x-backend.input name="linkedin" type="text" placeholder="Enter Company linkedin"/>
+                            <x-backend.input name="linkedin" type="text" placeholder="Enter Company linkedin" value=""/>
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <x-backend.label for="logo"><span class="fw-bold">Upload Company Logo:</span></x-backend.label>
-                    <x-backend.input name="logo" type="file" placeholder="Upload File" />
+                    <x-backend.input name="logo" type="file" placeholder="Upload File" value=""/>
                 </div>
                 <div class="form-group"><button type="submit" class="btn btn-success">Add Company</button></div>
 
