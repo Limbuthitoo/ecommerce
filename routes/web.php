@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +32,6 @@ require __DIR__.'/auth.php';
 
 Route::middleware(['admin'])->group(function(){
     Route::resource('/company',CompanyController::class);
+    Route::resource('/category',CategoryController::class);
 });
 
