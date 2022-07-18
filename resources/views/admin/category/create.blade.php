@@ -17,7 +17,6 @@
                     <x-backend.input name="image" type="file" placeholder="Upload File" value=""/>
                 </div>
                 <div class="form-group"><button type="submit" class="btn btn-success">Add Category</button></div>
-
             </form>
         </div>
     </div>

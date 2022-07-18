@@ -52,5 +52,7 @@
                 </x-button>
             </div>
         </form>
+        <div style="margin-top: 15px; font-size:15px;"><span>Don't have an account? </span><a href="/register" style="color: blue"> Register Now</a></div>
     </x-auth-card>
+
 </x-guest-layout>

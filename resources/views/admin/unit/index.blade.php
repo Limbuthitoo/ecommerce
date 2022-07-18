@@ -1,9 +1,9 @@
 <x-backend.dashboard>
     <div class="card">
         <div class="card-header d-flex justify-content-between">
-            <h3>Categories</h3>
+            <h3>Units</h3>
 
-                <a href="/category/create" class="btn btn-success py-2">Add Category</a>
+                <a href="/unit/create" class="btn btn-success py-2">Add Unit</a>
 
 
         </div>
@@ -11,27 +11,22 @@
             <table class="table-stripped table">
                 <thead>
                     <tr>
-                        <th>Category</th>
-                        <th>Slug</th>
-                        <th>Image</th>
+                        <th>Unit</th>
                         <th>Action</th>
                     </tr>
-                    @foreach ($categories as $category)
-                        @if (!empty($category))
+                    @foreach ($units as $unit)
+                        @if (!empty($unit))
                             <tr>
 
-                                <td>{{$category->name}}</td>
-                                <td>{{$category->slug}}</td>
-                                <td><img src="{{asset($category->image)}}" alt="" width="100"></td>
+                                <td>{{$unit->unit}}</td>
                                 <td>
-                                    <form action="/category/{{$category->id}}" method="post">
+                                    <form action="/unit/{{$unit->id}}" method="post">
                                         @csrf
                                         @method('delete')
-                                    <a href="/category/{{$category->id}}/edit" class="btn btn-success">edit</a>
+                                    <a href="/unit/{{$unit->id}}/edit" class="btn btn-success">edit</a>
                                     <button type="submit" class="btn btn-danger">delete</button>
                                     </form>
                                 </td>
-
 
                             </tr>
                         @endif
