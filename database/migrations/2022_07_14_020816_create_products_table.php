@@ -17,11 +17,13 @@ return new class extends Migration
             $table->id();
             $table->String('name');
             $table->double('price');
-            $table->double('discount');
+            $table->double('discount')->nullable();
             $table->double('selling_price');
+            $table->double('quantity');
             $table->longText('description')->nullable();
             $table->String('image');
             $table->foreignId('category_id')->constrained();
+            $table->foreignId('unit_id')->constrained();
             $table->timestamps();
         });
     }

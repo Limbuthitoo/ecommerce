@@ -14,7 +14,7 @@
                         href="/unit" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
                             class="hide-menu">Units</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
+                        href="/product" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                             class="hide-menu">Products</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span

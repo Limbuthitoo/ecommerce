@@ -19,6 +19,16 @@
     <!-- Custom CSS -->
     <link href="/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {{-- CK Editor --}}
+    <style>
+        .ck-editor__editable_inline {
+            min-height: 150px;
+        }
+    </style>
+
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -56,7 +66,10 @@
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
+                            @if (!empty($company->logo))
                             <img src="{{asset($company->logo)}}" alt="homepage" class="light-logo" />
+                            @endif
+
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
@@ -326,6 +339,25 @@
     <script src="/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="/dist/js/pages/chart/chart-page-init.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2({
+               multiple:false
+            });
+        });
+    </script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#description' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
+
 
 </body>
 
