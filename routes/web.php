@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdsController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\ProductController;
@@ -37,5 +38,6 @@ Route::middleware(['admin'])->group(function(){
     Route::resource('/category',CategoryController::class);
     Route::resource('/product',ProductController::class);
     Route::resource('/unit',UnitController::class);
+    Route::resource('/ads',AdsController::class);
 });
 
