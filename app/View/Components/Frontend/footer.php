@@ -1,11 +1,10 @@
 <?php
 
-namespace App\View\Components\Frontend;
+namespace App\View\Components\frontend;
 
-use App\Models\Company;
 use Illuminate\View\Component;
 
-class Navbar extends Component
+class footer extends Component
 {
     /**
      * Create a new component instance.
@@ -24,7 +23,6 @@ class Navbar extends Component
      */
     public function render()
     {
-        $company = Company::first();
-        return view('components.frontend.navbar',compact('company'));
+        return view('components.frontend.footer');
     }
 }

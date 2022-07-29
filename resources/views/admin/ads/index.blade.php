@@ -23,7 +23,7 @@
                                 <tr>
                                     <td><img src="{{asset($ad->image)}}" width="100" alt=""></td>
                                     <td>{{$ad->title}}</td>
-                                    <td>{{$product->details}}</td>
+                                    <td>{{$ad->detail}}</td>
                                     <td>
                                         <form action="/ads/{{$ad->id}}" method="post">
                                             @csrf

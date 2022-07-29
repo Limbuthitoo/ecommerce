@@ -22,7 +22,7 @@
 
                                 <td>{{$category->name}}</td>
                                 <td>{{$category->slug}}</td>
-                                <td><img src="{{asset($category->image)}}" alt="" width="100"></td>
+                                <td><img src="{{asset($category->image)}}" alt="" width="50"></td>
                                 <td>
                                     <form action="/category/{{$category->id}}" method="post">
                                         @csrf

@@ -91,6 +91,12 @@ class CategoryController extends Controller
         $category =  Category::find($id);
         $category->name = $request->name;
         $category->slug = Str::slug($request->name);
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $newName = time() . "." . $file->getClientOriginalExtension();
+            $file->move("images",$newName);
+            $category->image = "images/$newName";
+        }
         $category->update();
         return redirect('/category');
     }

@@ -25,7 +25,7 @@
                         @foreach ( $products as $product )
                             @if (!empty($product))
                                 <tr>
-                                    <td><img src="{{asset($product->image)}}" width="100" alt=""></td>
+                                    <td><img src="{{asset($product->image)}}" width="50" alt=""></td>
                                     <td>{{$product->name}}</td>
                                     <td>{{$product->category->name}}</td>
                                     <td>{{$product->price}}</td>
