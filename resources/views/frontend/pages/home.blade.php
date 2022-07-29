@@ -2,7 +2,7 @@
     <x-slot name="title">Home</x-slot>
     <x-frontend.navbar />
 
-    /** Welcome with download app link **/
+    {{-- /** Welcome with download app link **/ --}}
     <div class="container">
         <div class="row">
             @foreach ($ads as $ad)
@@ -13,26 +13,37 @@
         </div>
     </div>
 
-    /** Category Navigation Bar **/
-    <div class="container ">
+    {{-- Category Navigation Bar  --}}
+    <div class="container py-2">
         <div class="row g-2">
-            <div class="col-lg-6">
-                <div class="d-flex flex-row justify-content-center py-1">
+            <div class="col-md-4">
+                <div class="d-flex flex-row  ">
                     @foreach ($categories as $index=>$category)
-                        @if ($index>=0 && $index<=5)
-                            <div class="p-1 flex-grow-1">
-                                <img src="{{asset($category->image)}}" width="200" class="img-fluid" alt="">
+                        @if ($index>=0 && $index<=3)
+                            <div >
+                                <img src="{{asset($category->image)}}"  class="img-fluid" alt="">
                             </div>
                         @endif
                     @endforeach
                  </div>
             </div>
-            <div class="col-lg-6">
-                <div class="d-flex flex-row justify-content-center py-1">
+            <div class="col-md-4">
+                <div class="d-flex flex-row  ">
                     @foreach ($categories as $index=>$category)
-                        @if ($index>=6 && $index<=12)
-                            <div class="p-1 flex-grow-1 ">
-                                <img src="{{asset($category->image)}}" width="200" class="img-fluid" alt="">
+                        @if ($index>=4 && $index<=7)
+                            <div >
+                                <img src="{{asset($category->image)}}"  class="img-fluid" alt="">
+                            </div>
+                        @endif
+                    @endforeach
+                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex flex-row ">
+                    @foreach ($categories as $index=>$category)
+                        @if ($index>=8 && $index<=11)
+                            <div>
+                                <img src="{{asset($category->image)}}"  class="img-fluid" alt="">
                             </div>
                         @endif
                     @endforeach
@@ -41,6 +52,6 @@
         </div>
     </div>
 
-    /** Footer **/
+    {{-- /** Footer **/ --}}
     <x-frontend.footer/>
 </x-frontend.template>

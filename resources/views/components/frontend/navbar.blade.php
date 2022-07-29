@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-md d-flex bg-light py-3">
+<nav class="navbar navbar-expand d-flex bg-light py-3">
     <div class="container">
 
         <a class="navbar-brand" href="/"><img src="{{asset($company->logo)}}" width="225" alt="" class="img-fluid"></a>
 
-        <form class="container d-flex justify-content-center align-items-center " role="search">
+        <form class="container d-flex justify-content-center align-items-center" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
