@@ -19,12 +19,21 @@ class PageController extends Controller
         //category menu
         $categories = Category::all();
 
-        //products
+        //products fruit and vegetables
         $fruitVegetable = Category::where('slug','fruits-vegetables')->first();
         $fruitsVegetables = Product::where('category_id',$fruitVegetable->id)->get();
 
+        //products Dairy breads and eggs
+        $dairyBreadEgg = Category::where('slug','dairy-breads-eggs')->first();
+        $dairyBreadsEggs = Product::where('category_id',$dairyBreadEgg->id)->get();
+
+        //products Dairy breads and eggs
+        $personalCare = Category::where('slug','personal-care')->first();
+        $personalCares = Product::where('category_id',$personalCare->id)->get();
+
         //ads
         $ads=ads::all();
-        return view('frontend.pages.home',compact('ads','company','categories','fruitsVegetables','fruitVegetable'));
+
+        return view('frontend.pages.home',compact('ads','company','categories','fruitsVegetables','fruitVegetable','dairyBreadEgg','dairyBreadsEggs','personalCare','personalCares'));
     }
 }

@@ -76,20 +76,20 @@
     </div>
 
 
-    {{-- Meat and Fish --}}
+    {{-- dairy breads and eggs--}}
     <div class="py-3">
         <div class="container">
             <div class="d-flex justify-content-between">
-                <h4>{{$fruitVegetable->name}}</h4>
+                <h4>{{$dairyBreadEgg->name}}</h4>
                 <a href="">See All</a>
             </div>
             <div class="row py-2 owl-carousel owl-theme owl-loaded">
                 <div class="col-12 owl-stage-outer">
                     <div class="owl-stage" >
-                        @foreach ($fruitsVegetables as $index=> $product)
+                        @foreach ($dairyBreadsEggs as $index=> $dairyProduct)
                             @if ($index>=0 && $index<=14)
                                 <div class="owl-item" >
-                                    <x-frontend.product :product=$product />
+                                    <x-frontend.product :product=$dairyProduct />
                                 </div>
                             @endif
                         @endforeach
@@ -100,20 +100,20 @@
     </div>
 
 
-    {{-- dairy bread and eggs--}}
+    {{-- Personal Care--}}
     <div class="py-3">
         <div class="container">
-            <div class="d-flex justify-content-between">
-                <h4>{{$fruitVegetable->name}}</h4>
+            <div class="d-flex justify-content-between fw-bold">
+                <h4>{{$personalCare->name}}</h4>
                 <a href="">See All</a>
             </div>
             <div class="row py-2 owl-carousel owl-theme owl-loaded">
                 <div class="col-12 owl-stage-outer">
                     <div class="owl-stage" >
-                        @foreach ($fruitsVegetables as $index=> $product)
+                        @foreach ($personalCares as $index=> $personalCare)
                             @if ($index>=0 && $index<=14)
                                 <div class="owl-item" >
-                                    <x-frontend.product :product=$product />
+                                    <x-frontend.product :product=$personalCare />
                                 </div>
                             @endif
                         @endforeach

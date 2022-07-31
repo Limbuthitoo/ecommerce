@@ -37,12 +37,12 @@
 <script type="text/javascript">
     $(window).on('load', function(){
         $('.owl-carousel').owlCarousel({
-            stagePadding: 25,
+            stagePadding: 15,
             loop:false,
             margin:10,
             nav:true,
             dots:false,
-            items:5,
+
             slideBy:5,
             navtext:["⮜", "⮞"],
             responsiveClass:true,

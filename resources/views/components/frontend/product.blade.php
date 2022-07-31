@@ -1,9 +1,14 @@
 
     <div class="card" style=" height:280px">
         <a href="/product/{{$product->id}}" class="text-decoration-none text-black">
-        <div class="p-1 align-center" >
+
                 <div class=" d-block mx-auto" style="width: 134px; height:134px" >
                     <img src="{{asset($product->image)}}" alt="" class="img-cover ">
+                    @if ($product->discount != 0 || !empty($product->discount))
+                        <div class="card-img-overlay">
+                            <h5 class="card-title bg-success p-1" style="font-size: 12px; color:aliceblue; width:40px">{{$product->discount}} % off</h5>
+                        </div>
+                    @endif
                 </div>
 
             <div class="card-body">
@@ -18,7 +23,7 @@
                     <button class="btn btn-success">Add</button>
                 </div>
             </div>
-        </div>
+
         </a>
     </div>
 
