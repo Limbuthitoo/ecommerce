@@ -19,7 +19,8 @@
                             <x-backend.label for="category"><span class="fw-bold">Category:</span></x-backend.label>
                             <select name="category_id"  class="select2 js-states form-control" id="id_label_multiple" multiple="multiple" style="width:100%">
                                 @foreach ($categories as $category)
-                                <option value="{{$category->id}}">
+                                <option value="{{$category->id}}" {{$product->category_id == $category->id? 'selected':''}}
+                                    >
                                     {{$category->name}}
                                 </option>
                                 @endforeach
@@ -30,9 +31,10 @@
                         <div class="form-group">
                             <x-backend.label for="unit"><span class="fw-bold">Unit:</span></x-backend.label>
                             <select name="unit_id"  class="select2 js-states form-control" id="id_label_multiple" multiple="multiple" style="width:100%">
-                                @foreach ($units as $item)
-                                <option value="{{$item->id}}">
-                                    {{$item->unit}}
+                                @foreach ($units as $unit)
+                                <option value="{{$unit->id}}" {{$product->unit->id == $unit->id? 'selected':''}}
+                                >
+                                    {{$unit->unit}}
                                 </option>
                                 @endforeach
                             </select>

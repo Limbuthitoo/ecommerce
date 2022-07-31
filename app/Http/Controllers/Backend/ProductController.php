@@ -103,6 +103,7 @@ class ProductController extends Controller
         $product->selling_price = round(($request->price)-($request->price*(($request->discount)/100)),2);
         $product->description = $request->description;
         $product->unit_id = $request->unit_id;
+        $product->quantity = $request->quantity;
         $product->category_id = $request->category_id;
         if ($request->hasFile('image')) {
             $file = $request->file('image');

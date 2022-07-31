@@ -1,0 +1,37 @@
+* {
+    font-family: "Sora", Arial, Helvetica, sans-serif !important;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+a {
+    color: green !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.owl-carousel {
+    margin: 1rem 0 !important;
+}
+
+.container .owl-nav {
+    color: green !important;
+}
+.container .owl-prev,
+.container .owl-next {
+    position: absolute;
+    top: 40%;
+    font-weight: bold !important;
+    background-color: lightgray !important;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+.container .owl-prev {
+    left: 0;
+}
+
+.container .owl-next {
+    right: 0;
+}
