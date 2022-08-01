@@ -45,6 +45,7 @@
                         @endforeach
                 </tbody>
             </table>
+            {!! $products->withQueryString()->links('pagination::bootstrap-5') !!}
         </div>
     </div>
 </x-backend.dashboard>

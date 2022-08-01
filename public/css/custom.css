@@ -1,5 +1,5 @@
 * {
-    font-family: "Sora", Arial, Helvetica, sans-serif !important;
+    font-family: "Sora", Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: lighter;
 }
@@ -9,6 +9,10 @@ a {
     text-decoration: none;
 }
 
+span {
+    font-size: medium;
+    font-weight: bold;
+}
 .owl-carousel {
     margin: 1rem 0 !important;
 }

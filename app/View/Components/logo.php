@@ -1,12 +1,11 @@
 <?php
 
-namespace App\View\Components\Backend;
+namespace App\View\Components;
 
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\Company;
 use Illuminate\View\Component;
 
-class sidebar extends Component
+class logo extends Component
 {
     /**
      * Create a new component instance.
@@ -25,8 +24,7 @@ class sidebar extends Component
      */
     public function render()
     {
-        $categories = Category::all();
-        $products= Product::all();
-        return view('components.backend.sidebar',compact('categories','products'));
+        $company=Company::first();
+        return view('components.logo',compact('company'));
     }
 }

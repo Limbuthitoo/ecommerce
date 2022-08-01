@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -64,6 +65,9 @@ class CategoryController extends Controller
     public function show($id)
     {
 
+        $category = Category::find($id);
+        $products =Product::where('category_id',$id)->get();
+        return view('admin.category.show',compact('category','products'));
     }
 
     /**

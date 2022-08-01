@@ -2,7 +2,9 @@
 
 namespace App\View\Components\Backend;
 
+use App\Models\Category;
 use App\Models\Company;
+use App\Models\Product;
 use Illuminate\View\Component;
 
 class dashboard extends Component
@@ -24,6 +26,7 @@ class dashboard extends Component
      */
     public function render()
     {
+
         $company= Company::first();
         return view('components.backend.dashboard',compact('company'));
     }

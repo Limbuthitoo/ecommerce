@@ -16,24 +16,35 @@
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="/product" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                             class="hide-menu">Products</span></a></li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
+                                    class="hide-menu">Products Category</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level">
+                        @foreach ($categories as $category)
+                        <li class="sidebar-item"><a href="/category/{{$category->id}}" class="sidebar-link"><i
+                            class="mdi mdi-note-outline"></i><span class="hide-menu"> {{$category->name}}
+                        </span></a></li>
+                        @endforeach
+                    </ul>
+                </li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
+                        href="grid.html" aria-expanded="false"><i class="mdi mdi-cart"></i><span
                             class="hide-menu">Orders</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                         href="/ads" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
                             class="hide-menu">Product Ads</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                        href="grid.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span
+                        href="grid.html" aria-expanded="false"><i class="mdi mdi-format-list-bulleted"></i><span
                             class="hide-menu">Post</span></a></li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark"
-                        href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span
+                        href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-tune"></i><span
                             class="hide-menu">General Setting </span></a>
                     <ul aria-expanded="false" class="collapse  first-level">
                         <li class="sidebar-item"><a href="/company" class="sidebar-link"><i
-                                    class="mdi mdi-note-outline"></i><span class="hide-menu"> Company Info
+                                    class="mdi mdi-information"></i><span class="hide-menu"> Company Info
                                 </span></a></li>
                         <li class="sidebar-item"><a href="form-wizard.html" class="sidebar-link"><i
-                                    class="mdi mdi-note-plus"></i><span class="hide-menu"> User Setting
+                                    class="mdi mdi-clipboard-account"></i><span class="hide-menu"> User Setting
                                 </span></a></li>
                     </ul>
                 </li>

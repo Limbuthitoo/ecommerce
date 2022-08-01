@@ -2,17 +2,29 @@
 
 namespace App\View\Components;
 
+use App\Models\Company;
 use Illuminate\View\Component;
 
 class GuestLayout extends Component
 {
     /**
-     * Get the view / contents that represents the component.
+     * Create a new component instance.
      *
-     * @return \Illuminate\View\View
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
      */
     public function render()
     {
-        return view('layouts.guest');
+        $company=Company::all();
+        return view('components.guest-layout',compact('company'));
     }
 }

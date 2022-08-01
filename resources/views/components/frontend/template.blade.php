@@ -11,8 +11,10 @@
 {{-- custom Css --}}
 <link rel="stylesheet" href="css/custom.css">
 
-{{-- custom SCSS --}}
-<link rel="stylesheet" href="css/custom.css">
+{{-- fontawesome --}}
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 
 {{-- Custom Google Fonts --}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora">
@@ -31,6 +33,10 @@
 <body>
 
 {{ $slot }}
+
+{{-- font awesome --}}
+
+
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
@@ -42,7 +48,6 @@
             margin:10,
             nav:true,
             dots:false,
-
             slideBy:5,
             navtext:["⮜", "⮞"],
             responsiveClass:true,
