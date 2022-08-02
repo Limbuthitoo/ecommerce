@@ -3,7 +3,7 @@
         <a href="/product/{{$product->id}}" class="text-decoration-none text-black">
 
                 <div class=" d-block mx-auto" style="width: 134px; height:134px" >
-                    <img src="{{asset($product->image)}}" alt="" class="img-cover ">
+                    <img src="{{asset($product->image)}}" alt="" class="img-fluid ">
                     @if ($product->discount != 0 || !empty($product->discount))
                         <div class="card-img-overlay">
                             <h5 class="card-title bg-danger p-1" style="font-size: 12px; color:aliceblue; width:40px">{{$product->discount}} % off</h5>
@@ -18,9 +18,21 @@
                 <p><span style="font-size: 12px; color:grey">{{$product->quantity}} {{$product->unit->unit}}</span></p>
                 <div class="d-flex justify-content-between">
                     <div class="fw-bold">
-                        <p>Rs {{$product->selling_price}}</p>
+                        <p>
+                            <span>
+                                Rs {{$product->selling_price}}
+                            </span>
+                            <br>
+                            <span class="text-danger text-decoration-line-through" style="font-size: 12px">
+                                @if (!empty($product->discount))
+                                Rs {{$product->price}}
+                                @endif
+                            </span>
+                        </p>
+
+
                     </div>
-                    <button class="btn btn-success">Add</button>
+                    <button class="btn btn-success h-100">Add</button>
                 </div>
             </div>
 

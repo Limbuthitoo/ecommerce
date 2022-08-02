@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PageController::class,'home']);
+Route::get('/product/category/{id}', [PageController::class,'productCategory']);
+Route::get('/product/{id}', [PageController::class,'productDetail']);
+
 
 
 Route::get('/dashboard', function () {

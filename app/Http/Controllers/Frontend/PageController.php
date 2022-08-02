@@ -17,7 +17,7 @@ class PageController extends Controller
         $company = Company::first();
 
         //category menu
-        $categories = Category::all();
+        $menus = Category::all();
 
         //products fruit and vegetables
         $fruitVegetable = Category::where('slug','fruits-vegetables')->first();
@@ -34,6 +34,27 @@ class PageController extends Controller
         //ads
         $ads=ads::all();
 
-        return view('frontend.pages.home',compact('ads','company','categories','fruitsVegetables','fruitVegetable','dairyBreadEgg','dairyBreadsEggs','personalCare','personalCares'));
+        return view('frontend.pages.home',compact('ads','company','menus','fruitsVegetables','fruitVegetable','dairyBreadEgg','dairyBreadsEggs','personalCare','personalCares'));
+    }
+
+    public function productCategory($id)
+    {
+        //Menu from category
+        $menus=Category::all();
+
+        //Product list by category
+        $categories = Category::find($id);
+        $products =Product::where('category_id',$id)->get();
+        return view('frontend.pages.product_category',compact('categories','products','menus'));
+    }
+
+    public function productDetail($id)
+    {
+        //category menu
+        $menus = Category::all();
+
+        //Product Details
+        $product = Product::find($id);
+        return view('frontend.pages.product_detail',compact('product','menus'));
     }
 }

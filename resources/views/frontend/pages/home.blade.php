@@ -15,37 +15,46 @@
 
     {{-- Category Navigation Bar  --}}
     <div class="container py-2">
+
         <div class="row g-2">
             <div class="col-md-4">
                 <div class="d-flex flex-row  ">
-                    @foreach ($categories as $index=>$category)
+
+                    @foreach ($menus as $index=>$category)
+                    <a href="/product/category/{{$category->id}}">
                         @if ($index>=0 && $index<=3)
                             <div >
                                 <img src="{{asset($category->image)}}"  class="img-fluid" alt="">
                             </div>
                         @endif
+                    </a>
                     @endforeach
+
                  </div>
             </div>
             <div class="col-md-4">
                 <div class="d-flex flex-row  ">
-                    @foreach ($categories as $index=>$category)
+                    @foreach ($menus as $index=>$category)
+                    <a href="/product/category/{{$category->id}}">
                         @if ($index>=4 && $index<=7)
                             <div >
                                 <img src="{{asset($category->image)}}"  class="img-fluid" alt="">
                             </div>
                         @endif
+                    </a>
                     @endforeach
                  </div>
             </div>
             <div class="col-md-4">
                 <div class="d-flex flex-row ">
-                    @foreach ($categories as $index=>$category)
+                    @foreach ($menus as $index=>$category)
+                    <a href="/product/category/{{$category->id}}">
                         @if ($index>=8 && $index<=11)
                             <div>
                                 <img src="{{asset($category->image)}}"  class="img-fluid" alt="">
                             </div>
                         @endif
+                    </a>
                     @endforeach
                  </div>
             </div>
