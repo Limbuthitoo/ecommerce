@@ -53,6 +53,7 @@
             </tfoot>
         </table>
     </div>
+
     {{-- /** Footer **/ --}}
     <x-frontend.footer/>
 </x-frontend.template>

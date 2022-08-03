@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\UnitController;
+use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\Frontend\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,10 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PageController::class,'home']);
 Route::get('/product/category/{id}', [PageController::class,'productCategory']);
 Route::get('/product/{id}', [PageController::class,'productDetail']);
-Route::get('cart', [PageController::class, 'cart'])->name('cart');
-Route::get('add-to-cart/{id}', [PageController::class, 'addToCart'])->name('add.to.cart');
-Route::patch('update-cart', [PageController::class, 'update'])->name('update.cart');
-Route::delete('remove-from-cart', [PageController::class, 'remove'])->name('remove.from.cart');
+Route::get('/cart', [PageController::class, 'cart'])->name('cart');
+Route::post('/cart', [PageController::class, 'addToCart']);
+Route::get('add-to-cart/{id}', [CartController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove.from.cart');
 
 
 

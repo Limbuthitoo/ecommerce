@@ -49,13 +49,10 @@
                             <div class="col-lg-6 col-sm-6 col-6">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i><span> Your Cart</span><span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                             </div>
-                            @php $total = 0 @endphp
-                            @foreach((array) session('cart') as $id => $details)
-                                @php $total += $details['price'] * $details['quantity'] @endphp
-                            @endforeach
-                            <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                                <p>Total: <span class="text-success">Rs {{ $total }}</span></p>
+                            <div class="col-lg-6 col-sm-6 col-6 text-end">
+                                <a href="{{ route('cart') }}" class="text-Success">View all</a>
                             </div>
+
                         </div>
                         <table>
                             @if(session('cart'))
@@ -75,16 +72,24 @@
                             @endforeach
                         @endif
                         </table>
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6 col-6 text-center checkout">
-                                <a href="{{ route('cart') }}" class="btn btn-success text-white">View all</a>
+                        <hr>
+                        <div class="row align-items-center">
+                            @php $total = 0 @endphp
+                            @foreach((array) session('cart') as $id => $details)
+                                @php $total += $details['price'] * $details['quantity'] @endphp
+                            @endforeach
+                            <div class="col-lg-6 col-sm-6 col-6">
+                                <p><span>{{ count((array) session('cart')) }} items </span> <br> <span class="text-success" style="font-size: 15px;"> Rs {{ $total }}</span></p>
                             </div>
-                            <div class="col-lg-6 col-sm-6 col-6 text-center checkout">
-                                @if (Auth::user())
-                                    <a href="/" class="btn btn-success text-white">Checkout</a>
+                            <div class="col-lg-6 col-sm-6 col-6 text-end ">
+                                @guest
+                                <a type="button" class="btn btn-success text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Checkout
+                                </a>
+                                <x-frontend.login />
                                 @else
-                                    <x-frontend.login />
-                                @endif
+                                    <a href="/" class="btn btn-success text-white">Checkout</a>
+                                @endguest
                             </div>
                         </div>
                     </div>

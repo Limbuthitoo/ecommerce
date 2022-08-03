@@ -66,53 +66,16 @@ class PageController extends Controller
         return view('frontend.pages.cart');
     }
 
-    public function addToCart($id)
+    public function addToCart(Request $request)
     {
-        $product = Product::findOrFail($id);
-        $cart = session()->get('cart',[]);
-        if (isset($cart[$id])) {
-            $cart($id)['quantity']++;
-        } else{
-            $cart[$id] =[
-                "name" => $product->name,
-                "quantity"=>1,
-                "price" => $product->selling_price,
-                "image" => $product->image
-            ];
-            session()->put('cart',$cart);
+
+            $cart = new Cart();
+            $cart -> product_id = $request->product_id;
+            $cart -> quantity = $request->quantity;
+            $cart -> amount = $request->selling_price * $request->quantity;
+            $cart -> user_id = Auth::user()->id;
+            $cart->save();
             return redirect()->back();
-        }
 
-
-        // $cart = new Cart();
-        // $cart -> product_id = $request->product_id;
-        // $cart -> quantity = $request->quantity;
-        // $cart -> amount = $request->selling_price * $request->quantity;
-        // $cart -> user_id = Auth::user()->id;
-        // $cart->save();
-        // return redirect()->back();
-    }
-
-    public function update(Request $request)
-    {
-        if($request->id && $request->quantity){
-            $cart = session()->get('cart');
-            $cart[$request->id]["quantity"]=$request->quantity;
-            session()->put('cart', $cart);
-
-        }
-    }
-
-    /** Remove Cart Product **/
-    public function remove(Request $request)
-    {
-        if($request->id){
-            $cart=session()->get('cart');
-            if (isset($cart[$request->id])) {
-                unset($cart[$request->id]);
-                session()->put('cart',$cart);
-            }
-
-        }
     }
 }
