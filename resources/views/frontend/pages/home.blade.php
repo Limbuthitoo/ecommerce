@@ -15,7 +15,6 @@
 
     {{-- Category Navigation Bar  --}}
     <div class="container py-2">
-
         <div class="row g-2">
             <div class="col-md-4">
                 <div class="d-flex flex-row  ">
@@ -71,10 +70,10 @@
             <div class="row py-2 owl-carousel owl-theme owl-loaded">
                 <div class="col-12 owl-stage-outer">
                     <div class="owl-stage" >
-                        @foreach ($fruitsVegetables as $index=> $product)
+                        @foreach ($fruitsVegetables as $index=> $freshVeg)
                             @if ($index>=0 && $index<=14)
                                 <div class="owl-item" >
-                                    <x-frontend.product :product=$product />
+                                    <x-frontend.product :product=$freshVeg />
                                 </div>
                             @endif
                         @endforeach
@@ -131,6 +130,7 @@
             </div>
         </div>
     </div>
+
     {{-- /** Footer **/ --}}
     <x-frontend.footer/>
 </x-frontend.template>

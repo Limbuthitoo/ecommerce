@@ -1,16 +1,10 @@
-<nav class="navbar navbar-expand-md  bg-light py-3">
+
+
+<nav class="navbar bg-light py-3">
     <div class="container d-flex">
         <div>
-            <a class="navbar-brand" href="/"><img src="{{asset($company->logo)}}" width="225" alt="" class="img-fluid"></a>
+            <a class="navbar-brand" href="/"><img src="{{asset($company->logo)}}" width="150" alt="" class="img-fluid"></a>
         </div>
-
-        <div class="container">
-            <form class=" d-flex align-items-center" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-
         <div class="ms-auto">
             <div class="d-flex align-items-center">
                 <div class="align-items-end">
@@ -45,11 +39,65 @@
                         </ul>
                     @endguest
                 </div>
-                <div class="text-end" style="width:100px">
-                    <a type="button" class="btn btn-success text-white" href=""><span><i class="fa fa-shopping-cart" style="font-size: 25px" aria-hidden="true"></i></span><span class="fs-5 fw-bold"> Cart</span> </a>
+
+                <div class="dropdown px-2 nav-item">
+                    <button type="button" class="btn btn-success nav-link text-white" style="width:100px; height:40px" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span>{{ count((array) session('cart')) }}</span>
+                    </button>
+                    <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                        <div class="row total-header-section">
+                            <div class="col-lg-6 col-sm-6 col-6">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i><span> Your Cart</span><span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                            </div>
+                            @php $total = 0 @endphp
+                            @foreach((array) session('cart') as $id => $details)
+                                @php $total += $details['price'] * $details['quantity'] @endphp
+                            @endforeach
+                            <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                <p>Total: <span class="text-success">Rs {{ $total }}</span></p>
+                            </div>
+                        </div>
+                        <table>
+                            @if(session('cart'))
+                            @foreach(session('cart') as $id => $details)
+                                <tr class="row cart-detail" data-id="{{ $id }}">
+                                    <td class="col-lg-3 col-sm-3 col-3 cart-detail-img">
+                                        <img src="{{ $details['image'] }}" />
+                                    </td>
+                                    <td class="col-lg-7 col-sm-7 col-7 cart-detail-product">
+                                        <p>{{ $details['name'] }}</p>
+                                        <span class="price text-success fw-bold"> Rs {{ $details['price'] }}</span> <span class="count" style="font-size: 12px"> Quantity:{{ $details['quantity'] }}</span>
+                                    </td>
+                                    <td class="col-lg-2 col-sm-2 col-2 p-3 ">
+                                        <button class="btn btn-danger btn-sm text-white remove-from-cart" type="button"><i class="fa fa-trash-o"></i></button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        @endif
+                        </table>
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6 col-6 text-center checkout">
+                                <a href="{{ route('cart') }}" class="btn btn-success text-white">View all</a>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-6 text-center checkout">
+                                @if (Auth::user())
+                                    <a href="/" class="btn btn-success text-white">Checkout</a>
+                                @else
+                                    <x-frontend.login />
+                                @endif
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
-  </nav>
+</nav>
+
+<div class="container py-3">
+    <form class="d-flex w-100" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</div>
+

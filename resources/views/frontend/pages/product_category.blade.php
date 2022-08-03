@@ -1,15 +1,15 @@
 <x-frontend.template>
-    <x-slot name="title">Home</x-slot>
+    <x-slot name="title">Category Product</x-slot>
     <x-frontend.navbar />
     <div class="container py-2">
         {{-- Menus  --}}
         <div class="row g-2">
             <div class="col-11">
-                <div class="d-flex justify-content-between text-center">
+                <div class="row g-3 justify-content-between ">
                     @foreach ($menus as $index=>$category)
-                        @if ($index>=0 && $index<=6)
-                            <div >
-                                <a href="/product/category/{{$category->id}}">{{$category->name}}</a>
+                        @if ($index>=0 && $index<=5)
+                            <div class="col-2 px-4 text-center">
+                                <a href="/product/category/{{$category->id}}">{{ $category->name}}</a>
                             </div>
                         @endif
                     @endforeach
@@ -22,9 +22,11 @@
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($menus as $index=>$category)
-                        @if ($index>=7 && $index<=11)
+                        @if ($index>=6 && $index<=11)
                             <div >
-                                <li><a class="dropdown-item" href="/product/category/{{$category->id}}">{{$category->name}}</a></li>
+                                <li><a class="dropdown-item" href="/product/category/{{$category->id}}">
+
+                                    {{ $category->name}}</a></li>
                             </div>
                         @endif
                     @endforeach
@@ -44,7 +46,7 @@
             <div class="col-12">
                 <div class="row g-3">
                     @foreach ($products as $product)
-                            <div class="col-2" >
+                            <div class="col-md-3" >
                                 <x-frontend.product :product=$product />
                             </div>
                     @endforeach

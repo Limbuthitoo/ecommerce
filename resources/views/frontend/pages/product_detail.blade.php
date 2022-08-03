@@ -1,5 +1,5 @@
 <x-frontend.template>
-    <x-slot name="title">Home</x-slot>
+    <x-slot name="title">Product Detail</x-slot>
     <x-frontend.navbar />
     <div class="container py-2">
         {{-- Menus  --}}
@@ -37,7 +37,7 @@
     {{-- Product Details --}}
     <div class="container  py-5">
         <div class="row">
-            <div class="col-md-4 overlay">
+            <div class="col-lg-4 overlay">
                 <div class="overlay-content">
                     @if (!empty($product->discount))
                         <h5 class="bg-danger p-1" style="font-size: 24px; color:aliceblue; width:100px;">{{$product->discount}} % off</h5>
@@ -45,13 +45,13 @@
                 </div>
                 <img src="{{asset($product->image)}}" class="img-fluid" alt="">
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="row">
                     <div class="col-12">
                         <h3>{{$product->name}}</h3>
                     </div>
-                    <div class="col-2 py-3">
-                        <div class="card border border-success">
+                    <div class="col-4 py-3">
+                        <div class="card border border-success" style="width:135px">
                             <div class="card-body">
                                    <span class="text-success" style="font-size: 15px;"> Rs {{$product->selling_price}} / {{$product->unit->unit}}</span><br>
                                    @if (!empty($product->discount))
